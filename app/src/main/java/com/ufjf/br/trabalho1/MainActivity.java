@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             add("Quatro");
         }};
         final RecyclerView rv = findViewById(R.id.recyclerView);
-        ItemAdapter adapter = new ItemAdapter(itens);
+        ItemAdapter adapter = new ItemAdapter(Planejamento.getDataSample());
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
         adapter.setOnItemListaClickListener(new ItemAdapter.OnItemListaClickListener() {
