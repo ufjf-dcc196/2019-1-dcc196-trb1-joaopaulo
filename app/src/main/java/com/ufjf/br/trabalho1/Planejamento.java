@@ -19,13 +19,15 @@ public class Planejamento {
         this.porcentagemDisciplinaCursadas = porcentagemDisciplinaCursadas;
     }
 
-    public static List<Planejamento> getDataSample(){
-        if(dataSample.size()==0){
-            for(int i = 0; i<10;i++){
-            dataSample.add(new Planejamento(2019,"Semestre 2019-1",))
+    public static List<Planejamento> getDataSample() {
+        if (dataSample.size() == 0) {
+            for (int i = 0; i < 10; i++) {
+                dataSample.add(new Planejamento(2019, "Semestre 2019-1", (double) (7 * i), (double) (100 * i), (double) (5 * i)));
             }
         }
+        return dataSample;
     }
+
     public Planejamento() {
     }
 

@@ -9,19 +9,21 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Locale;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
-    private List<String> itens;
+    private List<Planejamento> itens;
     private OnItemListaClickListener listener;
 
     public interface OnItemListaClickListener {
         void onItemListaClick(View itemListaView, int position);
     }
 
-    public ItemAdapter(List<String> itens) {
+    public ItemAdapter(List<Planejamento> itens) {
         this.itens = itens;
     }
-    public void setOnItemListaClickListener(OnItemListaClickListener listener){
+
+    public void setOnItemListaClickListener(OnItemListaClickListener listener) {
         this.listener = listener;
     }
 
@@ -38,8 +40,19 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String item = itens.get(position);
-        holder.nome.setText(item);
+        Planejamento item = itens.get(position);
+        holder.nome.setText(String.format(Locale.getDefault(),
+                "Ano: %d \n" +
+                        "Semestre: %s \n" +
+                        "Perc Horas Atividades: %.2f \n" +
+                        "Total de Horas Computadas: %.2f\n" +
+                        "Perc Parciais Disciplinas Cursadas: %.2f",
+                item.getAno(),
+                item.getSemestre(),
+                item.getPorcentagemHoras(),
+                item.getTotalHorasComputadas(),
+                item.getPorcentagemDisciplinaCursadas()
+                ));
 
     }
 
@@ -57,9 +70,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (listener!=null){
-                        int position =  getAdapterPosition();
-                        if(position!=RecyclerView.NO_POSITION){
+                    if (listener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
                             listener.onItemListaClick(v, position);
                         }
                     }
