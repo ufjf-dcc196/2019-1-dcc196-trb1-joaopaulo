@@ -1,4 +1,4 @@
-package com.ufjf.br.trabalho1;
+package com.ufjf.br.trabalho1.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,10 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.ufjf.br.trabalho1.model.Planejamento;
+import com.ufjf.br.trabalho1.R;
+
 import java.util.List;
 import java.util.Locale;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
+public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapter.ViewHolder> {
     private List<Planejamento> itens;
     private OnItemListaClickListener listener;
 
@@ -19,7 +22,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         void onItemListaClick(View itemListaView, int position);
     }
 
-    public ItemAdapter(List<Planejamento> itens) {
+    public PlanejamentoAdapter(List<Planejamento> itens) {
         this.itens = itens;
     }
 
@@ -41,18 +44,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Planejamento item = itens.get(position);
-        holder.nome.setText(String.format(Locale.getDefault(),
-                "Ano: %d \n" +
-                        "Semestre: %s \n" +
-                        "Perc Horas Atividades: %.2f \n" +
-                        "Total de Horas Computadas: %.2f\n" +
-                        "Perc Parciais Disciplinas Cursadas: %.2f",
-                item.getAno(),
-                item.getSemestre(),
-                item.getPorcentagemHoras(),
-                item.getTotalHorasComputadas(),
-                item.getPorcentagemDisciplinaCursadas()
-                ));
+        holder.nome.setText(item.makeDescription());
 
     }
 

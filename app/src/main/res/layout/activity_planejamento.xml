@@ -2,33 +2,111 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="395dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity"
     tools:layout_editor_absoluteX="8dp"
-    tools:layout_editor_absoluteY="8dp">
-    <TableRow>
+    tools:layout_editor_absoluteY="8dp"
+    android:scrollbars="vertical">
+
+    <TableRow android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:text="Cadastro de Planejamento"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:textSize="15sp" />
+
+    </TableRow>
+
+    <TableRow android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/edt_Ano"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:ems="10"
+            android:hint="Digite seu Ano"
+            android:inputType="numberSigned"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_Semestre" />
+    </TableRow>
+
+    <TableRow android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/edt_Semestre"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:ems="10"
+            android:hint="Digite seu Semestre"
+            android:inputType="textAutoComplete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_PorcetagemHorasAtividades" />
+    </TableRow>
+
+    <TableRow android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/edt_PorcetagemHorasAtividades"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:ems="10"
+            android:hint="Digite a Porcentagem de Horas da Atividade"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_totalHorasComputadas" />
+    </TableRow>
+
+    <TableRow android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/edt_totalHorasComputadas"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:ems="10"
+            android:hint="Digite o Total de Horas Computadas"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_PorcetagemDisciplinaCursadas" />
+    </TableRow>
+
+    <TableRow android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/edt_PorcetagemDisciplinaCursadas"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:ems="10"
+            android:hint="Digite a Porcentagem de Disciplinas"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSalvarPlanejamento" />
+    </TableRow>
+
+    <TableRow android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/buttonCadastrar"
+            android:id="@+id/buttonSalvarPlanejamento"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="381dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="23dp"
-            android:width="@android:dimen/notification_large_icon_height"
-            android:text="Cadastrar Planejamento" />
-    </TableRow>
-
-    <TableRow android:layout_width="match_parent">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="@android:integer/config_longAnimTime"
-            android:gravity="center_horizontal"
-            android:scrollbars="vertical" />
+            android:layout_marginTop="26dp"
+
+            android:text="Salvar Planejamento"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
     </TableRow>
-
-
 </TableLayout>

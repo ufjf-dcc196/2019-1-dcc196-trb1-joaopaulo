@@ -1,7 +1,8 @@
-package com.ufjf.br.trabalho1;
+package com.ufjf.br.trabalho1.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Planejamento {
     private static List<Planejamento> dataSample = new ArrayList<>();
@@ -69,6 +70,21 @@ public class Planejamento {
 
     public void setPorcentagemDisciplinaCursadas(Double porcentagemDisciplinaCursadas) {
         this.porcentagemDisciplinaCursadas = porcentagemDisciplinaCursadas;
+    }
+
+    public String makeDescription(){
+        return String.format(Locale.getDefault(),
+                "Ano: %d \n" +
+                        "Semestre: %s \n" +
+                        "Perc Horas Atividades: %.2f \n" +
+                        "Total de Horas Computadas: %.2f\n" +
+                        "Perc Parciais Disciplinas Cursadas: %.2f",
+                this.getAno(),
+                this.getSemestre(),
+                this.getPorcentagemHoras(),
+                this.getTotalHorasComputadas(),
+                this.getPorcentagemDisciplinaCursadas()
+        );
     }
 }
 
