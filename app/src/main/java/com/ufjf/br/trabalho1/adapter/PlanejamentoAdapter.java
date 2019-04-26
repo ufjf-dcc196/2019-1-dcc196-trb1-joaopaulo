@@ -30,6 +30,10 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
         this.listener = listener;
     }
 
+    public void addPlanejamento(Planejamento planejamento){
+        this.itens.add(planejamento);
+        notifyItemInserted(getItemCount());
+    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {

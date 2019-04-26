@@ -1,10 +1,11 @@
 package com.ufjf.br.trabalho1.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class Planejamento {
+public class Planejamento implements Serializable {
     private static List<Planejamento> dataSample = new ArrayList<>();
     private int ano;
     private String semestre;
