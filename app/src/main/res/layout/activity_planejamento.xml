@@ -31,13 +31,13 @@
             android:inputType="numberSigned"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_Semestre" />
+            app:layout_constraintTop_toBottomOf="@+id/edt_horas" />
     </TableRow>
 
     <TableRow android:gravity="center_horizontal">
 
         <EditText
-            android:id="@+id/edt_Semestre"
+            android:id="@+id/edt_horas"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"
@@ -46,13 +46,13 @@
             android:inputType="textAutoComplete"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_PorcetagemHorasAtividades" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_Area" />
     </TableRow>
 
     <TableRow android:gravity="center_horizontal">
 
         <EditText
-            android:id="@+id/edt_PorcetagemHorasAtividades"
+            android:id="@+id/edit_Area"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="383dp"
+        android:layout_height="507dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:text="Cadastrar Disciplina"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                tools:textSize="15sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/edt_Titulo"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:ems="10"
+                android:hint="Título"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_horas" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/edt_horas"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:ems="10"
+                android:hint="Total de Horas"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_Area" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/edit_Area"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:ems="10"
+                android:hint="Área a qual pertence"
+                android:inputType="textAutoComplete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_totalHorasComputadas" />
+        </TableRow>
+    </TableLayout>
+</android.support.constraint.ConstraintLayout>

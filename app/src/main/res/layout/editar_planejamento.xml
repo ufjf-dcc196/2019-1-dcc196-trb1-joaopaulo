@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:text="Editar Planejamento"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                tools:textSize="15sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/edt_Ano"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:ems="10"
+                android:hint="Digite seu Ano"
+                android:inputType="numberSigned"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_horas" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/edt_horas"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:ems="10"
+                android:hint="Digite seu Semestre"
+                android:inputType="textAutoComplete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_Area" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/edit_Area"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:ems="10"
+                android:hint="Digite a Porcentagem de Horas da Atividade"
+                android:inputType="numberDecimal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_totalHorasComputadas" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/edt_totalHorasComputadas"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:ems="10"
+                android:hint="Digite o Total de Horas Computadas"
+                android:inputType="numberDecimal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_PorcetagemDisciplinaCursadas" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/edt_PorcetagemDisciplinaCursadas"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:ems="10"
+                android:hint="Digite a Porcentagem de Disciplinas"
+                android:inputType="numberDecimal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonSalvarPlanejamento" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/buttonSalvarPlanejamento"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+
+                android:text="Salvar Planejamento"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+        </TableRow>
+
+    </TableLayout>
+</android.support.constraint.ConstraintLayout>
