@@ -1,10 +1,12 @@
 package com.ufjf.br.trabalho1.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class Disciplina implements Serializable {
-
+    private static List<Disciplina> dataSample = new ArrayList<>();
     private int cargaHoraria;
     private String titulo;
     private String area;
@@ -42,7 +44,7 @@ public class Disciplina implements Serializable {
         this.area = area;
     }
 
-    public String makeDescription(){
+    public String makeDescription() {
         return String.format(Locale.getDefault(),
                 "Título: %d \n" +
                         "Carga Horária: %s \n" +
@@ -51,5 +53,21 @@ public class Disciplina implements Serializable {
                 this.getCargaHoraria(),
                 this.getArea()
         );
+    }
+
+    public static List<Disciplina> getDataSample() {
+        if (dataSample.size() == 0) {
+            dataSample.add(new Disciplina(60, "Cálculo 1", "Exatas"));
+            dataSample.add(new Disciplina(60, "Cálculo 2", "Exatas"));
+            dataSample.add(new Disciplina(60, "Cálculo 3", "Exatas"));
+            dataSample.add(new Disciplina(30, "Bioestatística", "Saúde"));
+            dataSample.add(new Disciplina(60, "Anatommia", "Saúde"));
+            dataSample.add(new Disciplina(60, "Introdução a Filosofia", "Humanas"));
+            dataSample.add(new Disciplina(60, "Introdução a Sociologia", "Humanas"));
+            dataSample.add(new Disciplina(60, "Inglês Avançado", "Línguas"));
+            dataSample.add(new Disciplina(60, "Inglês Básico", "Línguas"));
+            dataSample.add(new Disciplina(60, "Inglês Intermediário", "Línguas"));
+        }
+        return dataSample;
     }
 }
