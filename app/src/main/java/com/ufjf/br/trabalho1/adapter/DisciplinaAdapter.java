@@ -8,21 +8,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.ufjf.br.trabalho1.model.Planejamento;
 import com.ufjf.br.trabalho1.R;
+import com.ufjf.br.trabalho1.model.Disciplina;
+import com.ufjf.br.trabalho1.model.Planejamento;
 
 import java.util.List;
-import java.util.Locale;
 
-public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapter.ViewHolder> {
-    private List<Planejamento> itens;
+public class DisciplinaAdapter extends RecyclerView.Adapter<DisciplinaAdapter.ViewHolder> {
+    private List<Disciplina> itens;
     private OnItemListaClickListener listener;
 
     public interface OnItemListaClickListener {
         void onItemListaClick(View itemListaView, int position);
     }
 
-    public PlanejamentoAdapter(List<Planejamento> itens) {
+    public DisciplinaAdapter(List<Disciplina> itens) {
         this.itens = itens;
     }
 
@@ -30,8 +30,8 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
         this.listener = listener;
     }
 
-    public void addPlanejamento(Planejamento planejamento){
-        this.itens.add(planejamento);
+    public void addDisciplina(Disciplina disciplina){
+        this.itens.add(disciplina);
         notifyItemInserted(getItemCount());
     }
     @NonNull
@@ -47,7 +47,7 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Planejamento item = itens.get(position);
+        Disciplina item = itens.get(position);
         holder.nome.setText(item.makeDescription());
 
     }
