@@ -17,7 +17,7 @@ import java.util.List;
 
 public class DetalheActivity extends AppCompatActivity {
 
-    public static final int REQUEST_PLANEJAMENTO = 1;
+    public static final int REQUEST_DISCIPLINA = 1;
     private DisciplinaAdapter adapter;
 
     @Override
@@ -38,22 +38,32 @@ public class DetalheActivity extends AppCompatActivity {
                 Toast.makeText(DetalheActivity.this, itens.get(position).makeDescription(), Toast.LENGTH_SHORT).show();
             }
         });
-        Button botaoPlanejamento = findViewById(R.id.buttonCadastrar);
-        botaoPlanejamento.setOnClickListener(new View.OnClickListener() {
+        Button botaoNovaDisciplina = findViewById(R.id.buttonAdicionarDisciplina);
+        botaoNovaDisciplina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetalheActivity.this, PlanejamentoActivity.class);
-                startActivityForResult(intent, MainActivity.REQUEST_PLANEJAMENTO);
+                Intent intent = new Intent(DetalheActivity.this, DisciplinaActivity.class);
+                startActivityForResult(intent, DetalheActivity.REQUEST_DISCIPLINA);
             }
         });
+
+        Button botaoDetalhes = findViewById(R.id.buttonDetalhes);
+
+//        botaoDetalhes.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(DetalheActivity.this, DisciplinaActivity.class);
+//                startActivityForResult(intent, DetalheActivity.REQUEST_DISCIPLINA);
+//            }
+//        });
     }
 
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == MainActivity.REQUEST_PLANEJAMENTO) {
+        if (requestCode == DetalheActivity.REQUEST_DISCIPLINA) {
             if (resultCode == Activity.RESULT_OK) {
                 if (data != null) {
                     Bundle bundle = data.getExtras();
-                    Disciplina disciplina = (Disciplina) bundle.get("planejamento");
+                    Disciplina disciplina = (Disciplina) bundle.get("disciplina");
                     adapter.addDisciplina(disciplina);
                     Toast.makeText(this,"Cadastro realizado com sucesso",Toast.LENGTH_SHORT).show();
                 }
