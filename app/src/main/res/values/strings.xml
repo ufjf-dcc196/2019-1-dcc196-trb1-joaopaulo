@@ -3,4 +3,8 @@
     <string name="title_activity_teste">TesteActivity</string>
     <string name="adicionar_disciplina">Adicionar Disciplina</string>
     <string name="detalhar_planejamento">Detalhar Planejamento</string>
+    <string name="cadastrar_disciplina">Cadastrar Disciplina</string>
+    <string name="titulo">Título</string>
+    <string name="total_de_horas">Total de Horas</string>
+    <string name="area">Área a qual pertence</string>
 </resources>

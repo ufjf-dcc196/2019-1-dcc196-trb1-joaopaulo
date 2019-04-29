@@ -28,7 +28,7 @@
 
             <TextView
                 android:layout_gravity="center_horizontal"
-                android:text="Cadastrar Disciplina"
+                android:text="@string/cadastrar_disciplina"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 tools:textSize="15sp" />
 
@@ -45,11 +45,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="26dp"
                 android:ems="10"
-                android:hint="Título"
+                android:hint="@string/titulo"
                 android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edt_horas" />
+                app:layout_constraintTop_toBottomOf="@+id/edt_horas"
+                android:autofillHints="" />
         </TableRow>
 
         <TableRow
@@ -63,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="26dp"
                 android:ems="10"
-                android:hint="Total de Horas"
+                android:hint="@string/total_de_horas"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="26dp"
                 android:ems="10"
-                android:hint="Área a qual pertence"
+                android:hint="@string/area"
                 android:inputType="textAutoComplete"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
