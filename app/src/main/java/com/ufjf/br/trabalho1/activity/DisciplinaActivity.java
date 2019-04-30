@@ -16,7 +16,7 @@ import com.ufjf.br.trabalho1.model.Disciplina;
 public class DisciplinaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_planejamento);
+        setContentView(R.layout.nova_disciplina);
         Button botaoSalvarDisciplina = findViewById(R.id.buttonSalvarDisciplina);
         botaoSalvarDisciplina.setOnClickListener(new View.OnClickListener() {
             @Override
