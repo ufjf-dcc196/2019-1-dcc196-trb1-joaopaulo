@@ -29,7 +29,7 @@ public class DetalheActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final List<Disciplina> itens = Disciplina.getDataSample();
-        final RecyclerView rv = findViewById(R.id.recyclerView);
+        final RecyclerView rv = findViewById(R.id.recyclerView2);
         this.adapter = new DisciplinaAdapter(itens);
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
