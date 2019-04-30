@@ -38,3 +38,5 @@ captures/
 \.idea/
 
 \.gradle/buildOutputCleanup/
+
+\.gradle/4\.10\.1/javaCompile/

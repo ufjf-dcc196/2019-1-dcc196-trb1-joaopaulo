@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemListaClick(View itemView, int position) {
                 Toast.makeText(MainActivity.this, itens.get(position).makeDescription(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this,DetalheActivity.class);
+                intent.putExtra("planejamento",itens.get(position));
+                startActivity(intent);
             }
         });
         Button botaoPlanejamento = findViewById(R.id.buttonCadastrar);
