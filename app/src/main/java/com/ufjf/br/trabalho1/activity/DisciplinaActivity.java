@@ -22,7 +22,7 @@ public class DisciplinaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText editTitulo = findViewById(R.id.edt_Titulo);
-                EditText editHoras = findViewById(R.id.edt_horas);
+                EditText editHoras = findViewById(R.id.edt_Horas);
                 EditText editArea = findViewById(R.id.edt_Area);
                 String titulo = editTitulo.getText().toString();
                 String area = editArea.getText().toString();
