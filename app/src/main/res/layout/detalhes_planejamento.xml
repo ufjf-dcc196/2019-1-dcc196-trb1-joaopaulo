@@ -22,7 +22,8 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
 
             <Button
                 android:id="@+id/buttonAdicionarDisciplina"
@@ -36,7 +37,7 @@
             <Button
                 android:id="@+id/buttonDetalhes"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="205dp"
+                android:layout_width="174dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="23dp"
                 android:width="@android:dimen/notification_large_icon_height"
@@ -61,11 +62,11 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerView2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="351dp"
+                android:layout_marginTop="26dp"
                 android:layout_weight="@android:integer/config_longAnimTime"
                 android:gravity="center_horizontal"
-                android:scrollbars="vertical"
-                android:layout_marginTop="26dp"/>
+                android:scrollbars="vertical" />
         </TableRow>
 
     </TableLayout>

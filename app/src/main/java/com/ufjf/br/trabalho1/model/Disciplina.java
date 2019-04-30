@@ -46,9 +46,9 @@ public class Disciplina implements Serializable {
 
     public String makeDescription() {
         return String.format(Locale.getDefault(),
-                "Título: %d \n" +
-                        "Carga Horária: %s \n" +
-                        "Área: %.2f \n",
+                "Título: %s \n" +
+                        "Carga Horária: %d \n" +
+                        "Área: %s \n",
                 this.getTitulo(),
                 this.getCargaHoraria(),
                 this.getArea()

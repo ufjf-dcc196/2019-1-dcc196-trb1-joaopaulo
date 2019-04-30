@@ -13,6 +13,14 @@
             android:name=".activity.PlanejamentoActivity">
 
         </activity>
+        <activity
+            android:name=".activity.DetalheActivity">
+
+        </activity>
+        <activity
+            android:name=".activity.DisciplinaActivity">
+
+        </activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
