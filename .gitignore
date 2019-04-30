@@ -40,5 +40,3 @@ captures/
 \.gradle/buildOutputCleanup/
 
 \.gradle/4\.10\.1/javaCompile/
-
-app/app\.iml
