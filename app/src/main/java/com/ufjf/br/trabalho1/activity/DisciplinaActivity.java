@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.ufjf.br.trabalho1.R;
 import com.ufjf.br.trabalho1.model.Disciplina;
 
 

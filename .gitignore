@@ -26,3 +26,15 @@ proguard/
 
 # Android Studio captures folder
 captures/
+
+\.gradle/4\.10\.1/fileHashes/
+
+*.bin
+
+\.gradle/4\.10\.1/taskHistory/
+
+\.idea/caches/
+
+\.idea/
+
+\.gradle/buildOutputCleanup/
