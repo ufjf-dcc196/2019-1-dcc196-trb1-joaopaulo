@@ -11,12 +11,21 @@ import android.widget.TextView;
 import com.ufjf.br.trabalho1.model.Planejamento;
 import com.ufjf.br.trabalho1.R;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Locale;
 
-public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapter.ViewHolder> {
+public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapter.ViewHolder> implements Serializable {
     private List<Planejamento> itens;
     private OnItemListaClickListener listener;
+
+    public void editPlanejamento(Planejamento planejamento) {
+        Integer index = this.itens.indexOf(planejamento);
+        if(index >-1){
+            this.itens.remove(index);
+            this.itens.add(index,planejamento);
+        }
+    }
 
     public interface OnItemListaClickListener {
         void onItemListaClick(View itemListaView, int position);

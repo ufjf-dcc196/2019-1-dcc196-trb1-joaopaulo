@@ -8,7 +8,7 @@ import java.util.Locale;
 public class Planejamento implements Serializable {
     private static List<Planejamento> dataSample = new ArrayList<>();
     private static List<Disciplina> disciplinas= new ArrayList<>();
-    private int ano;
+    private Integer ano;
     private String semestre;
     private Double porcentagemHoras;
     private Double totalHorasComputadas;
@@ -46,11 +46,11 @@ public class Planejamento implements Serializable {
         Planejamento.disciplinas = disciplinas;
     }
 
-    public int getAno() {
+    public Integer getAno() {
         return ano;
     }
 
-    public void setAno(int ano) {
+    public void setAno(Integer ano) {
         this.ano = ano;
     }
 

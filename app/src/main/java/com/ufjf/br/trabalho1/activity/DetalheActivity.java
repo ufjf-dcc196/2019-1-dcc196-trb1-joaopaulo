@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.ufjf.br.trabalho1.R;
 import com.ufjf.br.trabalho1.adapter.DisciplinaAdapter;
+import com.ufjf.br.trabalho1.adapter.PlanejamentoAdapter;
 import com.ufjf.br.trabalho1.model.Disciplina;
 import com.ufjf.br.trabalho1.model.Planejamento;
 
@@ -23,8 +24,10 @@ import java.util.List;
 public class DetalheActivity extends AppCompatActivity {
 
     public static final int REQUEST_DISCIPLINA = 1;
+    public static final int REQUEST_PLANEJAMENTO = 2;
     private DisciplinaAdapter adapter;
     private Planejamento planejamento;
+    private PlanejamentoAdapter adapterPlanejamento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +68,7 @@ public class DetalheActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(DetalheActivity.this, EditarActivity.class);
                 intent.putExtra("planejamento", planejamento);
-                startActivityForResult(intent, DetalheActivity.REQUEST_DISCIPLINA);
+                startActivity(intent);
             }
         });
     }
@@ -81,6 +84,16 @@ public class DetalheActivity extends AppCompatActivity {
                 }
             }
         }
+       /* else if( requestCode == DetalheActivity.REQUEST_PLANEJAMENTO){
+            if (resultCode == Activity.RESULT_OK) {
+                if (data != null) {
+                    Bundle bundle = data.getExtras();
+                    Planejamento planejamento = (Planejamento) bundle.get("planejamento");
+                    adapterPlanejamento.addPlanejamento(planejamento);
+                    Toast.makeText(this,"Editar realizado com sucesso",Toast.LENGTH_SHORT).show();
+                }
+            }
+        }*/
     }
-    
+
 }

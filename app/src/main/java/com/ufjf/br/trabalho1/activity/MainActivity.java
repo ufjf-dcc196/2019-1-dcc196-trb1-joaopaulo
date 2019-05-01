@@ -53,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, MainActivity.REQUEST_PLANEJAMENTO);
             }
         });
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null) {
+            Planejamento planejamento = (Planejamento) bundle.get("planejamento");
+            adapter.editPlanejamento(planejamento);
+        }
     }
 
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

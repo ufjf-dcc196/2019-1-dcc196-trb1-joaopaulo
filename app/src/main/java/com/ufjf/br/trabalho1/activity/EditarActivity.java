@@ -25,7 +25,7 @@ public class EditarActivity extends AppCompatActivity {
         EditText editPercDiscCurs = findViewById(R.id.edt_PorcetagemDisciplinaCursadasEditar);
         EditText editTotalHComp = findViewById(R.id.edt_totalHorasComputadasEditar);
         EditText editPercHAtv = findViewById(R.id.edt_PorcetagemHorasAtividadesEditar);
-        editAno.setText(planejamento.getAno());
+        editAno.setText(planejamento.getAno().toString());
         editSemestre.setText(planejamento.getSemestre());
         editPercDiscCurs.setText(planejamento.getPorcentagemDisciplinaCursadas().toString());
         editTotalHComp.setText(planejamento.getTotalHorasComputadas().toString());
@@ -43,11 +43,11 @@ public class EditarActivity extends AppCompatActivity {
                 Double percDiscCurs = Double.parseDouble(editPercDiscCurs.getText().toString());
                 Double totalHComp = Double.parseDouble(editTotalHComp.getText().toString());
                 Double percHAtv = Double.parseDouble(editPercHAtv.getText().toString());
-                Planejamento planejamento = new Planejamento(ano, semestre, percDiscCurs, totalHComp, percDiscCurs);
-                Intent intent = new Intent();
+                Planejamento planejamento = new Planejamento(ano, semestre, percDiscCurs, totalHComp, percHAtv);
+                Intent intent = new Intent(EditarActivity.this,MainActivity.class);
                 intent.putExtra("planejamento", planejamento);
-                setResult(Activity.RESULT_OK, intent);
-                finish();
+                startActivity(intent);
+
 
             }
         });
