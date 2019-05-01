@@ -19,12 +19,12 @@ public class EditarActivity extends AppCompatActivity {
         setContentView(R.layout.editar_planejamento);
         Bundle bundle = getIntent().getExtras();
         Planejamento planejamento = (Planejamento) bundle.get("planejamento");
-        Button botaoSalvarPlanejamento = findViewById(R.id.buttonSalvarPlanejamento);
-        EditText editAno = findViewById(R.id.edt_Ano);
-        EditText editSemestre = findViewById(R.id.edt_Semestre);
-        EditText editPercDiscCurs = findViewById(R.id.edt_PorcetagemDisciplinaCursadas);
-        EditText editTotalHComp = findViewById(R.id.edt_totalHorasComputadas);
-        EditText editPercHAtv = findViewById(R.id.edt_PorcetagemHorasAtividades);
+        Button botaoSalvarPlanejamento = findViewById(R.id.buttonEditarPlanejamento);
+        EditText editAno = findViewById(R.id.edt_AnoEditar);
+        EditText editSemestre = findViewById(R.id.edt_SemestreEditar);
+        EditText editPercDiscCurs = findViewById(R.id.edt_PorcetagemDisciplinaCursadasEditar);
+        EditText editTotalHComp = findViewById(R.id.edt_totalHorasComputadasEditar);
+        EditText editPercHAtv = findViewById(R.id.edt_PorcetagemHorasAtividadesEditar);
         editAno.setText(planejamento.getAno());
         editSemestre.setText(planejamento.getSemestre());
         editPercDiscCurs.setText(planejamento.getPorcentagemDisciplinaCursadas().toString());
