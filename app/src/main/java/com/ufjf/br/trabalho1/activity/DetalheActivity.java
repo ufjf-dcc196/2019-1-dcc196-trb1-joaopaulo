@@ -68,7 +68,7 @@ public class DetalheActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(DetalheActivity.this, EditarActivity.class);
                 intent.putExtra("planejamento", planejamento);
-                startActivity(intent);
+                startActivityForResult(intent,REQUEST_PLANEJAMENTO);
             }
         });
     }
@@ -84,16 +84,18 @@ public class DetalheActivity extends AppCompatActivity {
                 }
             }
         }
-       /* else if( requestCode == DetalheActivity.REQUEST_PLANEJAMENTO){
+       else if( requestCode == DetalheActivity.REQUEST_PLANEJAMENTO){
             if (resultCode == Activity.RESULT_OK) {
                 if (data != null) {
                     Bundle bundle = data.getExtras();
                     Planejamento planejamento = (Planejamento) bundle.get("planejamento");
-                    adapterPlanejamento.addPlanejamento(planejamento);
-                    Toast.makeText(this,"Editar realizado com sucesso",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent();
+                    intent.putExtra("planejamento", planejamento);
+                    setResult(Activity.RESULT_OK, intent);
+                    finish();
                 }
             }
-        }*/
+        }
     }
 
 }

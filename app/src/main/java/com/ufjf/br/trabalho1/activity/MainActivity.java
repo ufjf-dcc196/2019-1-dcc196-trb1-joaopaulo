@@ -22,6 +22,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static final int REQUEST_PLANEJAMENTO = 1;
+    private static final int REQUEST_EDITARPLANEJAMENTO = 2;
     private PlanejamentoAdapter adapter;
 
     @Override
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(MainActivity.this, itens.get(position).makeDescription(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this,DetalheActivity.class);
                 intent.putExtra("planejamento",itens.get(position));
-                startActivity(intent);
+                startActivityForResult(intent,MainActivity.REQUEST_EDITARPLANEJAMENTO);
             }
         });
         Button botaoPlanejamento = findViewById(R.id.buttonCadastrar);
@@ -53,11 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, MainActivity.REQUEST_PLANEJAMENTO);
             }
         });
-        Bundle bundle = getIntent().getExtras();
-        if(bundle != null) {
-            Planejamento planejamento = (Planejamento) bundle.get("planejamento");
-            adapter.editPlanejamento(planejamento);
-        }
+
     }
 
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -68,6 +65,15 @@ public class MainActivity extends AppCompatActivity {
                     Planejamento planejamento = (Planejamento) bundle.get("planejamento");
                     adapter.addPlanejamento(planejamento);
                     Toast.makeText(this,"Cadastro realizado com sucesso",Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+        else if(requestCode == MainActivity.REQUEST_EDITARPLANEJAMENTO){
+            if (resultCode == Activity.RESULT_OK) {
+                if (data != null) {
+                    Bundle bundle = data.getExtras();
+                    Planejamento planejamento = (Planejamento) bundle.get("planejamento");
+                    adapter.editPlanejamento(planejamento);
                 }
             }
         }

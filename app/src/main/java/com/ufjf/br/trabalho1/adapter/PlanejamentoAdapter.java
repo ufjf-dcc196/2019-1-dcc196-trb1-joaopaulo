@@ -20,11 +20,15 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
     private OnItemListaClickListener listener;
 
     public void editPlanejamento(Planejamento planejamento) {
-        Integer index = this.itens.indexOf(planejamento);
-        if(index >-1){
-            this.itens.remove(index);
-            this.itens.add(index,planejamento);
+        for (int i = 0; i < this.itens.size(); i++) {
+            if (this.itens.get(i).getIdPlanejamento().equals(planejamento.getIdPlanejamento())) {
+                this.itens.remove(i);
+                this.itens.add(i, planejamento);
+                notifyItemChanged(i);
+            }
         }
+
+
     }
 
     public interface OnItemListaClickListener {
@@ -39,10 +43,11 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
         this.listener = listener;
     }
 
-    public void addPlanejamento(Planejamento planejamento){
+    public void addPlanejamento(Planejamento planejamento) {
         this.itens.add(planejamento);
         notifyItemInserted(getItemCount());
     }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {

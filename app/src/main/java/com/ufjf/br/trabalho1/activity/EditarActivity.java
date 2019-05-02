@@ -13,12 +13,13 @@ import com.ufjf.br.trabalho1.R;
 import com.ufjf.br.trabalho1.model.Planejamento;
 
 public class EditarActivity extends AppCompatActivity {
+    private Planejamento planejamento;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.editar_planejamento);
         Bundle bundle = getIntent().getExtras();
-        Planejamento planejamento = (Planejamento) bundle.get("planejamento");
+        this.planejamento = (Planejamento) bundle.get("planejamento");
         Button botaoSalvarPlanejamento = findViewById(R.id.buttonEditarPlanejamento);
         EditText editAno = findViewById(R.id.edt_AnoEditar);
         EditText editSemestre = findViewById(R.id.edt_SemestreEditar);
@@ -33,20 +34,21 @@ public class EditarActivity extends AppCompatActivity {
         botaoSalvarPlanejamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText editAno = findViewById(R.id.edt_Ano);
-                EditText editSemestre = findViewById(R.id.edt_Semestre);
-                EditText editPercDiscCurs = findViewById(R.id.edt_PorcetagemDisciplinaCursadas);
-                EditText editTotalHComp = findViewById(R.id.edt_totalHorasComputadas);
-                EditText editPercHAtv = findViewById(R.id.edt_PorcetagemHorasAtividades);
+                EditText editAno = findViewById(R.id.edt_AnoEditar);
+                EditText editSemestre = findViewById(R.id.edt_SemestreEditar);
+                EditText editPercDiscCurs = findViewById(R.id.edt_PorcetagemDisciplinaCursadasEditar);
+                EditText editTotalHComp = findViewById(R.id.edt_totalHorasComputadasEditar);
+                EditText editPercHAtv = findViewById(R.id.edt_PorcetagemHorasAtividadesEditar);
                 Integer ano = Integer.parseInt(editAno.getText().toString());
                 String semestre = editSemestre.getText().toString();
                 Double percDiscCurs = Double.parseDouble(editPercDiscCurs.getText().toString());
                 Double totalHComp = Double.parseDouble(editTotalHComp.getText().toString());
                 Double percHAtv = Double.parseDouble(editPercHAtv.getText().toString());
-                Planejamento planejamento = new Planejamento(ano, semestre, percDiscCurs, totalHComp, percHAtv);
-                Intent intent = new Intent(EditarActivity.this,MainActivity.class);
+                Planejamento planejamento = new Planejamento(EditarActivity.this.planejamento.getIdPlanejamento(),ano, semestre, percDiscCurs, totalHComp, percHAtv);
+                Intent intent = new Intent();
                 intent.putExtra("planejamento", planejamento);
-                startActivity(intent);
+                setResult(Activity.RESULT_OK, intent);
+                finish();
 
 
             }

@@ -7,7 +7,8 @@ import java.util.Locale;
 
 public class Planejamento implements Serializable {
     private static List<Planejamento> dataSample = new ArrayList<>();
-    private static List<Disciplina> disciplinas= new ArrayList<>();
+    private static List<Disciplina> disciplinas = new ArrayList<>();
+    private Integer idPlanejamento;
     private Integer ano;
     private String semestre;
     private Double porcentagemHoras;
@@ -22,10 +23,19 @@ public class Planejamento implements Serializable {
         this.porcentagemDisciplinaCursadas = porcentagemDisciplinaCursadas;
     }
 
+    public Planejamento(Integer idPlanejamento, Integer ano, String semestre, Double porcentagemHoras, Double totalHorasComputadas, Double porcentagemDisciplinaCursadas) {
+        this.idPlanejamento = idPlanejamento;
+        this.ano = ano;
+        this.semestre = semestre;
+        this.porcentagemHoras = porcentagemHoras;
+        this.totalHorasComputadas = totalHorasComputadas;
+        this.porcentagemDisciplinaCursadas = porcentagemDisciplinaCursadas;
+    }
+
     public static List<Planejamento> getDataSample() {
         if (dataSample.size() == 0) {
             for (int i = 0; i < 10; i++) {
-                dataSample.add(new Planejamento(2019, "Semestre 2019-1", (double) (7 * i), (double) (100 * i), (double) (5 * i)));
+                dataSample.add(new Planejamento(i, 2019, "Semestre 2019-1", (double) (7 * i), (double) (100 * i), (double) (5 * i)));
             }
         }
         return dataSample;
@@ -44,6 +54,14 @@ public class Planejamento implements Serializable {
 
     public static void setDisciplinas(List<Disciplina> disciplinas) {
         Planejamento.disciplinas = disciplinas;
+    }
+
+    public Integer getIdPlanejamento() {
+        return idPlanejamento;
+    }
+
+    public void setIdPlanejamento(Integer idPlanejamento) {
+        this.idPlanejamento = idPlanejamento;
     }
 
     public Integer getAno() {
@@ -86,13 +104,14 @@ public class Planejamento implements Serializable {
         this.porcentagemDisciplinaCursadas = porcentagemDisciplinaCursadas;
     }
 
-    public String makeDescription(){
+    public String makeDescription() {
         return String.format(Locale.getDefault(),
-                "Ano: %d \n" +
+                "Id: %d\n" +
+                        "Ano: %d \n" +
                         "Semestre: %s \n" +
                         "Perc Horas Atividades: %.2f \n" +
                         "Total de Horas Computadas: %.2f\n" +
-                        "Perc Parciais Disciplinas Cursadas: %.2f",
+                        "Perc Parciais Disciplinas Cursadas: %.2f", this.idPlanejamento,
                 this.getAno(),
                 this.getSemestre(),
                 this.getPorcentagemHoras(),
